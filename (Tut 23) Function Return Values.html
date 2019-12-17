@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+var drawWinston = function(faceX, faceY) {
+    fill(255, 255, 0);
+    ellipse(faceX, faceY, 180, 180); // face
+    fill(46, 46, 41);
+    ellipse(faceX - 30, faceY - 50, 30, 30); // eyes
+    ellipse(faceX + 44, faceY - 55, 30, 30);
+    fill(252, 65, 65);
+    ellipse(faceX + 19, faceY + 32, 82, 81); // mouth
+};
+
+var calcTotalDonuts = function(numYears) {
+    return 1 * 52 * numYears;
+};
+fill(255, 0, 0);
+text("2-year-old Winston ate:", 10, 20);
+text(calcTotalDonuts(2) + " Donuts", 10, 40);
+text("14-year-old Winston ate:", 200, 20);
+text(calcTotalDonuts(14) + " Donuts", 200, 40);
+text("25-year-old Winston ate:", 10, 220);
+text(calcTotalDonuts(25) + " Donuts", 10, 240);
+text("65-year-old Winston ate:", 200, 220);
+text(calcTotalDonuts(65) + " Donuts", 200, 240);
+drawWinston(99, 117);
+drawWinston(294, 117);
+drawWinston(101, 316);
+drawWinston(294, 316);
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+<!--
+        <script src="processing.js"></script>
+-->
+	<script src="https://github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+      
+      <script type="text/processing" data-processing-target="targetcanvas">
+void setup() { 
+  size(400, 400); 
+} 
+
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+draw = function() {
+    background(165, 219, 162);
+    fill(255, 254, 222);
+    rect(20, 100, 364, 200);
+
+    fill(0, 0, 0);
+    textSize(20);
+
+    
+    if (mousePressed){
+        text("ProcessingJS", 138, 200);
+        
+    } else{
+    
+		text("What programming language is this?", 39, 200);
+    }
+};
+/**/
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+</script>
+
+	</head>
+		
+    <body align = "center">
+        <canvas id="targetcanvas"
+	width="400" height="400" ></canvas>
+    </body>
+	
+	
+	
+</html>
+	

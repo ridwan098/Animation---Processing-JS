@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+background(89, 216, 255);
+
+draw = function() {
+    
+    background(89, 216, 255);
+    var centerX = mouseX;
+    var centerY = mouseY;
+    var bodyLength = 118;
+    var bodyHeight = 74;
+    var bodyColor = color(mouseX, mouseX, mouseY);
+    
+    noStroke();
+    fill(bodyColor);
+    // body
+    ellipse(centerX, centerY, bodyLength, bodyHeight);
+    // tail
+    var tailWidth = bodyLength/4;
+    var tailHeight = bodyHeight/2;
+    triangle(centerX-bodyLength/2, centerY,
+             centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+             centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+    // eye
+    fill(33, 33, 33);
+    ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);
+ 
+        
+//sea rocks and pebbles
+/*fill(138, 138, 65); //rock 1
+ellipse(20,384,52,30);
+fill(212, 212, 121);
+ellipse(20,384,39,20);*/    //original rock
+
+    var drawRocks = function(rockX, rockY, rockW, rockH){
+        
+        var IrockW = 4/3 * rockW;
+        var IrockH = 3/2 * rockH;
+        
+        fill(138, 138, 65); //rock 2
+        ellipse(rockX,rockY,IrockW,IrockH);
+        fill(212, 212, 121);
+        ellipse(rockX,rockY,rockW,rockH);
+    };
+    
+    drawRocks(76, 376,52,30);//big rocks
+    drawRocks(129, 350,55,30);//big rocks
+    drawRocks(132,384,39,20);//small rocks
+    drawRocks(23,384,39,20);//small rocks
+    drawRocks(191, 376,52,30);//big rocks
+    drawRocks(191, 331,52,30);//big rocks
+    drawRocks(259, 376,52,30);//big rocks
+    drawRocks(259, 333,52,30);//big rocks
+    drawRocks(229,302,39,20);//small rocks
+    drawRocks(355, 376,52,30);//big rocks
+    drawRocks(306, 357,55,30);//big rocks
+    drawRocks(312,384,39,20);//small rocks
+    drawRocks(380,384,39,20);//small rocks
+
+};
+
+
+mouseMoved = function() {
+    fill(mouseX, mouseY, mouseY);
+    ellipse(mouseX, mouseY, 10, 10);
+};
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

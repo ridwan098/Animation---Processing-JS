@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+<!--
+        <script src="processing.js"></script>
+-->
+	<script src="https://github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+      
+      <script type="text/processing" data-processing-target="targetcanvas">
+void setup() { 
+  size(400, 400); 
+} 
+
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+var xPositions = [200, 100, 280, 1, 389];
+var yPositions = [0, 200, 300, 0, 0];
+var dropColours = [100, 300, 250, 198, 500];
+
+
+
+
+
+draw = function() {
+    background(204, 247, 255);
+    
+    for(var i = 0; i < xPositions.length; i++){
+        noStroke();
+        fill(dropColours[i], random(0,200), random(0,150));
+        ellipse(xPositions[i], yPositions[i], 10, 10);
+        if(yPositions[i] > 400) {
+            yPositions[i] = 0;
+        }
+         yPositions[i] += random(1,7);
+        
+    } 
+    
+};
+
+var mouseClicked = function() {
+    fill(232, 58, 232);
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+};
+
+
+
+/**/
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+</script>
+
+	</head>
+		
+    <body align = "center">
+        <canvas id="targetcanvas"
+	width="400" height="400" ></canvas>
+    </body>
+	
+	
+	
+</html>
+	

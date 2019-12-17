@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+var backGrnd = function(){
+
+background(120, 255, 255);
+
+//Grass
+fill(40, 115, 13);
+rect(-3,328,407,355);
+
+//House
+
+fill(224, 159, 235);
+rect(10, 222, 180, 127);
+
+//roof
+fill(125, 79, 14);
+quad(402,228,327,65,74,65,-7,228);
+
+//Garage
+
+fill(207, 136, 12);
+rect(165, 217, 216, 139);
+
+//Garage roof
+
+fill(74, 166, 176);
+triangle(272, 86, 400, 219, 149, 219);
+
+rotate(-48);
+fill(255, 231, 184);
+rect(-63,257,181,10);
+
+rotate(94);
+fill(26, 31, 181);
+rect(250,-138,186,10);
+
+rotate(674);
+
+//garage door
+
+fill(219, 165, 112);
+rect(202, 238, 144, 117);
+
+//Door
+
+fill(120, 19, 19);
+rect(32, 271, 51, 79);
+
+//Window frame*/
+
+for (var x = 96; x <120; x+=75){
+fill(227, 195, 107);
+rect(x, 239, 45, 58);
+}
+ //door windows
+for (var x = 99; x < 137;x +=20){
+    
+    for (var y = 242; y <290; y +=18){
+    fill(163, 181, 132);
+    rect(x, y, 18, 16);
+}
+}
+
+//Garage Windows
+
+ for (var lines = 242; lines < 353; lines+=13) {
+    
+    stroke(153, 122, 76);
+    strokeWeight(2);
+    line(345,lines, 203, lines);
+    }
+
+for (var windowX = 208; windowX < 329; windowX +=22){
+
+stroke(54, 38, 15);
+rect(windowX,245,20,20);
+}
+
+//Attic Window
+
+var windowLines = 119;
+
+
+
+strokeWeight(3);
+ellipse(273,170,50,50);
+strokeWeight(6);
+ellipse(178,118,62,62);
+strokeWeight(1.2);
+line(149,118,206,118);
+line(177,88,177,150);
+
+
+
+//roof
+
+fill(47, 44, 110);
+rect(72,62,259,10);
+
+//Cheminy
+
+
+fill(88, 153, 76);
+rect(63,32,45,80);
+rect(55,31,60,22);
+
+};
+//var pic = getImage("cute/CharacterPinkGirl");
+//var char = getImage("cute/Selector");
+draw = function(){
+    backGrnd();
+    //mage(pic,mouseX - 21, mouseY - 42, 81,138);
+};
+
+
+//YOUR JS PROGRAM CODE ENDS HERE.   /***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

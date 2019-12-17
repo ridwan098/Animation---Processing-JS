@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+
+fill(120, 9, 148);
+var message = "y is now ";
+
+var y = 20;
+while(y < 400) {
+    text(message + y, 30, y);
+    y += 20;
+    // Go back to the start of the loop!
+}
+
+/* The Three Loop Questions:
+ 1. What do I want to repeat? 
+   -> The text function with the message!
+ 2. What do I want to change each time? 
+   -> The y position, increasing by 20 each time.
+ 3. How long should we repeat?
+   -> As long as y is less than 400, all the way down.
+*/ 
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.   /***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+var lifeInches = 20;
+
+var calcInches = function(startAge, endAge, inchesPerYear) {
+    var totalInches = inchesPerYear * (endAge - startAge);
+    lifeInches += totalInches;
+    return totalInches;
+};
+
+fill(255, 0, 0);
+
+text("From 0-8 years:", 10, 20);
+text(calcInches(0, 8, 2.5), 10, 40);
+
+text("From 8-16 years:", 10, 100);
+text(calcInches(8, 16, 2), 10, 120);
+
+text("Total grown over life:", 10, 168);
+text(lifeInches, 10, 200);
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

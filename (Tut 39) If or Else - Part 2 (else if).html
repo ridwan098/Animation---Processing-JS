@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+/*   **NoTE**	this will not work if they are not mutually exclusive and depend on each other, for example when we use a less
+than sign. this will affect the code as whatever is less than one will be less than 2 and 3 therefore the code for less than 1
+will run*/
+
+// generate a random number between 0 and 3
+var number = random(0, 3);
+// round the decimal to an integer
+var integer = round(number);
+
+// display the text
+fill(0, 0, 0);
+textSize(100);
+text(number, 100, 110);
+text(integer, 174, 350);
+
+// set the coin color
+if (integer === 0) {
+    fill(132, 0, 255);
+} 
+else if (integer === 1) {
+    fill(255, 255, 0);
+}
+else if (integer === 2) {
+    fill(255, 0, 0);
+}
+else {
+    fill(0, 196, 255);
+}
+
+
+// draw the "coin"
+ellipse(200, 200, 100, 100);
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

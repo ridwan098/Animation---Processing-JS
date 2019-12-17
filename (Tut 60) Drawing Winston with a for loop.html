@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+var drawWinston = function(faceX, faceY) {
+    fill(255, 255, 0);
+    ellipse(faceX, faceY, 180, 180); // face
+    fill(46, 46, 41);
+    ellipse(faceX - 30, faceY - 50, 30, 30); // eyes
+    ellipse(faceX + 44, faceY - 55, 30, 30);
+    fill(252, 65, 65);
+    ellipse(faceX + 19, faceY + 32, 82, 81); // mouth
+};
+
+
+
+var xPositions = [99, 294, 101, 294];
+var yPositions = [117, 117, 316, 316];
+for (var i = 0; i < xPositions.length; i++){
+        drawWinston(xPositions[i], yPositions[i]);   
+    
+}
+
+
+//YOUR JS PROGRAM CODE ENDS HERE.   /***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

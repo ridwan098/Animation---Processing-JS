@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+draw = function() {
+     
+
+
+    fill(0, 0, 0);
+    ellipse(200, 200, 375, 375);
+    triangle(200, 104, 280, 280, 120, 280);
+    var answer = floor(random(0, 5));
+
+    if (answer === 0) {
+        fill(255, 255, 255);
+        text("NOT YET", 176, 200);
+        text("IMPLEMENTED", 159, 229); 
+        fill(60, 0, 255);
+        
+    
+    
+    }else if(answer === 1) {
+        
+        fill(184, 17, 70);
+        triangle(200, 104, 280, 280, 120, 280);
+        fill(247, 247, 247);
+        text("YOU ARE:", 176, 233);
+        text("Going to be AMAZING", 142, 261); 
+
+        
+    }else if(answer === 2) {
+        fill(255, 247, 0);
+        triangle(200, 104, 280, 280, 120, 280);
+        fill(66, 45, 66);
+        text("See you:", 180, 210);
+        text("Tomorrow", 175, 239);
+        
+    }else if(answer === 3) {
+        fill(138, 84, 12);
+        triangle(200, 104, 280, 280, 120, 280);
+        fill(13, 27, 184);
+        text("Arsenal", 180, 226);
+        text("Will win the league", 150, 258);
+        
+    }else if(answer === 4){
+        fill(224, 105, 224);
+        triangle(200, 104, 280, 280, 120, 280);
+        fill(60, 0, 255);
+        text("Buy ME:", 179, 221);
+        text("An Iphone!!!", 170, 246); 
+        
+    }else{
+        fill(12, 138, 67);
+        triangle(200, 104, 280, 280, 120, 280);
+        fill(58, 172, 207);
+        text("Water is:", 177, 200);
+        text("A blessing!!!", 169, 229);
+        
+    }
+
+
+};
+
+
+// draw the "coin"
+ellipse(200, 200, 100, 100);
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

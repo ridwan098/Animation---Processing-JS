@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+
+
+background(76, 154, 237);
+//noFill();
+strokeWeight(10);
+line(124, 305, 101, 371);//left leg
+line(282, 305, 303, 371);//right leg
+
+line(361, 187, 284, 214);//right arm
+line(41, 184, 119, 211);//left arm
+
+
+strokeWeight(5);
+
+fill(210,105,30);
+ellipse(200, 258, 180, 180);//body
+
+fill(165,42,42);
+ellipse(200, 258, 84, 122);//inner body
+
+
+
+
+//variables for drawing the mouth
+        //mouth
+var mouthX = 200;
+var mouthY = 144;
+var mouthW = 70;
+var mouthH = 40;
+    
+        //teeth
+var teethW = 1/14 * mouthW;
+var teethH = 13/40 * mouthH;
+
+var LteethPosx = 9/10 * mouthX;
+var RteethPosx = 11/10 * mouthX;
+
+        //inner mouth
+var ImouthW = 58/70 *mouthW;
+var ImouthH = 1/2 * mouthH;
+
+        //variables connected to the head
+    //head
+var headW_H = 120;
+var headPosX = 200;
+var headPosY = 120;
+    //ears
+var L_and_R_EarW =  5/12 * headW_H;
+var L_and_R_EarH = 1/2 * headW_H;
+var earsPosY = 7/12 * headPosY;
+var L_EarPosX = 3/4 * headPosX;
+var R_EarPosX = 5/4 * headPosX;
+
+    //eyes
+var eyesW_H = 1/12 * headW_H;
+var eyesPosY = 33/40 *headPosY;
+var L_EyePosX = 87/100 * headPosX;
+var R_EyePosX = 111/100 * headPosX;
+
+
+draw = function() {
+    
+            //teeth
+    teethW = 1/14 * mouthW;
+    teethH = 13/40 * mouthH;
+        
+			//head
+	fill(244,164,96);
+    ellipse(headPosX, headPosY, headW_H, headW_H);//head
+     
+
+	 //inner mouth
+    ImouthW = 58/70 *mouthW;
+    ImouthH = 1/2 * mouthH;
+	 
+	eyesW_H = 1/12 * headW_H;
+    L_and_R_EarW =  5/12 * headW_H; 
+//Ears
+	fill(255,228,196);
+    ellipse(L_EarPosX, earsPosY, L_and_R_EarW, L_and_R_EarH);//left ear
+    ellipse(R_EarPosX, earsPosY, L_and_R_EarW, L_and_R_EarH);//right ear
+    
+    ellipse(L_EyePosX, eyesPosY, eyesW_H, eyesW_H);//left eye
+    ellipse(R_EyePosX, eyesPosY, eyesW_H, eyesW_H);//right eye
+    
+	
+			//mouth and teeth and inner mouth
+    fill(222, 206, 29);
+    ellipse(201, 144, mouthW, mouthH);//mouth
+    fill(224, 40, 108);
+    ellipse(202, 151, ImouthW, ImouthH);//inner mouth
+    fill(10, 9, 10);
+    ellipse(LteethPosx, 135, teethW, teethH);//left teeth
+    ellipse(RteethPosx, 135, teethW, teethH);//right teeth	
+
+
+			
+    headW_H += 1; 
+    mouthW += 2;
+    mouthH +=1;
+    LteethPosx -= 0.6;
+    RteethPosx += 0.6;
+    
+};
+
+fill(34,139,34);
+rect(1, 377, 396, 20);//floor
+//im drawing a bear
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+// Get the canvas that Processing-js will use
+    
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

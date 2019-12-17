@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+
+// For Loops!. THEY ARE JUST A MORE EFFICIENT WAY OF WRITING WHILE LOOPS AS THEY TAKE UP LESS SPACE
+
+fill(120, 9, 148);
+
+// for (start; how long; change)
+for (var y = 27; y < 354; y += 24) {
+    text("Pineapple pizza is the best!", 80, y);
+}
+
+/*
+var y = 27;
+while (y < 354) {
+    text("Pineapple pizza is the best!", 80, y);
+    y += 24;    
+}
+*/
+
+//YOUR JS PROGRAM CODE ENDS HERE.   /***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

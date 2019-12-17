@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+//doesnt work the way i want it to :(
+
+background(0, 0, 0);
+
+var draw = function() {
+   background(0,0,0);    
+   PImage b;
+
+    b = loadImage("Star.png");
+
+    image(loadImage(b), 200, 200);
+ 
+//i dont know how to load images in processing js
+    
+/*    image(getImage("Star.png"),246, 244);//1
+    image(getImage("cute/Star"), 302, 111);
+    image(getImage("cute/Star"), 6, 79);
+    image(getImage("space/rocketship"), mouseX-90, mouseY-100);
+    
+    image(getImage("cute/Star"), 82, -45);
+    image(getImage("cute/Star"), 82, 200);
+    image(getImage("cute/Star"), 163, 50);
+    image(getImage("cute/Star"), 300, -47);
+    
+    x+=1;
+    y+=1;*/
+    
+
+
+    
+};
+
+
+
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

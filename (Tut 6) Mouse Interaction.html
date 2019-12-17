@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+
+strokeWeight(3);
+stroke(57, 0, 214);
+fill(0, 210, 247);
+
+draw = function() {
+    
+   // background(255, 0, 255);
+    
+	//Mouse X and Y are the coordinates of the mouse's position
+    ellipse(mouseX, mouseY, 30, 30);	/*When placed inside of the
+	draw function, the mouse will be constantly updated, but
+	when placed outside of the draw function, it will only display
+	the location of when it was when the programme loaded*/
+    
+
+};
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+// Get the canvas that Processing-js will use
+    
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

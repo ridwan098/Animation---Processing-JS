@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+<!--
+        <script src="processing.js"></script>
+-->
+	<script src="https://github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+      
+      <script type="text/processing" data-processing-target="targetcanvas">
+void setup() { 
+  size(400, 400); 
+} 
+
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+var xPositions = [100, 200];
+var yPositions = [200, 300];
+
+
+
+var drawStars = function() {
+    background(9, 5, 59);
+    imageMode(CENTER);
+    for (var i = 0; i < yPositions.length; i++) {
+        image(getImage("space/star"), xPositions[i], yPositions[i], 30, 30);
+    }
+};
+
+drawStars();
+
+mouseClicked = function() {
+    
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+    drawStars();
+
+};
+
+
+/**/
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+</script>
+
+	</head>
+		
+    <body align = "center">
+        <canvas id="targetcanvas"
+	width="400" height="400" ></canvas>
+    </body>
+	
+	
+	
+</html>
+	

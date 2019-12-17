@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+var recipe = {
+    recipeTitle: "My Recipe",
+    recipeServings: 2,
+    recipeIngredients: ["Flour", "Water"],
+    
+};
+
+
+var recipeTitle = "Bread";
+var recipeServings = 2;
+var recipeIngredients = ["Flour", "Water"];
+
+fill(26, 26, 26);
+textSize(20);
+text(recipe.recipeTitle, 173, 23);
+text("Serves: " + recipe.recipeServings, 10, 55);
+text("Ingredients: " + recipe.recipeIngredients, 10, 85);
+
+
+//YOUR JS PROGRAM CODE ENDS HERE.   /***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

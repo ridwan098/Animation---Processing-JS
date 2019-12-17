@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+
+
+noStroke();
+var x = 220;
+var y = 220;
+var faceSize = 160;
+
+// ears
+var earSize=faceSize*1/2;
+fill(89, 52, 17);
+ellipse(x-faceSize*2/5, y-faceSize*2/5, earSize, earSize);
+ellipse(x+faceSize*2/5, y-faceSize*2/5, earSize, earSize);
+
+// face
+fill(163, 113, 5);
+ellipse(x, y, faceSize, faceSize);
+
+
+var eyeSize = 1/8 * faceSize;
+var LfEyePosX = x - faceSize*1/4;
+var LfEyePosY = y - faceSize*1/8;
+var RtEyePosX = x + faceSize*1/4;
+var RfEyePosY = y - faceSize*1/8;
+
+//eyes 
+fill(0, 0, 0);
+ellipse(LfEyePosX, LfEyePosY, eyeSize, eyeSize);
+ellipse(RtEyePosX, RfEyePosY, eyeSize, eyeSize);
+
+
+
+//nose
+fill(89, 52, 20);
+ellipse(x, y+faceSize/8, faceSize*4/15, faceSize/5);
+
+
+
+/**/
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+    
+// Get the canvas that Processing-js will use
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>

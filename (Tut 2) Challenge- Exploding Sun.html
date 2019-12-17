@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC !-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <head>
+    
+<title>INCLUDING Processing.JS IN WEBPAGES</title> 
+
+</head>
+<body>
+<p align="center"> 
+     
+<canvas id="mycanvas"></canvas> 
+    
+</p>
+ </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+<script>
+  
+var sketchProc = function(processingInstance) {
+     
+with (processingInstance) {
+        
+size(400, 400); 
+        
+frameRate(30);
+        
+        
+// WRITE YOUR PROGRAM CODE HERE  /**************************************/
+
+var x = 10;						//this is placed outside of the draw function because it will mean that the shape doesnt stay on one spot							
+// the starting size for the sun
+    var sunSize = 30; 
+
+draw = function() {
+    
+     noStroke();
+    // the beautiful blue sky
+    background(82, 222, 240);
+    
+
+    
+     // The sun, a little circle on the horizon
+    fill(255, 204, 0);
+    ellipse(200, 298, sunSize, sunSize);
+    
+    // The land, blocking half of the sun
+    fill(76, 168, 67);
+    rect(0, 300, 400, 100);  
+    
+    sunSize = sunSize +  1;
+};
+
+//YOUR JS PROGRAM CODE ENDS HERE.	/***************************************/
+}};  
+// Get the canvas that Processing-js will use
+    
+var canvas = document.getElementById("mycanvas"); 
+  
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    
+var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+
+
+</html>
